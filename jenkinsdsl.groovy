@@ -1,4 +1,4 @@
-job('simple-maven-app') {
+job('dsl-freestyle-job') {
     scm {
         git { 
             branch('master')
@@ -29,7 +29,7 @@ job('simple-maven-app') {
      }
 }
 
-pipelineJob('simple-maven-app-my-pipeline') {
+pipelineJob('dsl-pipeline-job') {
     description ('This job is a pipelinejob')
 
     definition{
