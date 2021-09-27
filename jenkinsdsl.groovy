@@ -32,7 +32,7 @@ job('simple-maven-app') {
      }
 }
 
-pipelineJob('simple-maven-app-pipeline') {
+pipelineJob('simple-maven-app-my-pipeline') {
     description ('This job is a pipelinejob')
 
     definition{
