@@ -2,9 +2,8 @@ job('simple-maven-app') {
     scm {
         git { 
             branch('master')
-            remote { 
-                credentials('MyGithubaccount')
-                github('vcroshan/simple-java-maven-app', protocol = 'https', host ='github.com')
+            remote {
+                github('ajaysanthosh/simple-java-maven-app', protocol = 'https', host ='github.com')
                 }
         }
     }
@@ -43,7 +42,7 @@ pipelineJob('simple-maven-app-pipeline') {
                         branch('master')
                         remote { 
                             credentials('MyGithubaccount')
-                            github('vcroshan/simple-java-maven-app', protocol = 'https', host ='github.com')
+                            github('ajaysanthosh/simple-java-maven-app', protocol = 'https', host ='github.com')
                         }
                     }
                 }
