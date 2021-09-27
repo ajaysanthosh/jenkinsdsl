@@ -3,6 +3,7 @@ job('simple-maven-app') {
         git { 
             branch('master')
             remote {
+                credentials('d8d4ca02-842b-41e9-a898-31233eab8e35')
                 github('ajaysanthosh/simple-java-maven-app', protocol = 'https', host ='github.com')
                 }
         }
@@ -13,17 +14,13 @@ job('simple-maven-app') {
         }
         maven{
             goals('clean package')
-            mavenInstallation('Maven3.8')
+            mavenInstallation('Maven 3.8')
             properties(skipTests: true)
         } 
         maven{
             goals('test')
-            mavenInstallation('Maven3.8')
-        } 
-        maven{
-            goals('-gs settings.xml deploy')
-            mavenInstallation('Maven3.8')
-        } 
+            mavenInstallation('Maven 3.8')
+        }
      }
      publishers{
         archiveArtifacts('target/*.jar')
@@ -40,8 +37,8 @@ pipelineJob('simple-maven-app-my-pipeline') {
                 scm {
                     git {
                         branch('master')
-                        remote { 
-                            credentials('MyGithubaccount')
+                        remote {
+                            credentials('d8d4ca02-842b-41e9-a898-31233eab8e35')
                             github('ajaysanthosh/simple-java-maven-app', protocol = 'https', host ='github.com')
                         }
                     }
